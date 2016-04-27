@@ -1,0 +1,6 @@
+{
+  "name": "Javascript",
+  "tagline": "javascript 汉字转 unicode",
+  "body": "app.filter(\"toUnicode\", function(){\r\n    return function(input){\r\n        var matches = input.match(/[^\\x00-\\xff]/g); //取得字符串中所有汉字，返回数组\r\n        if(matches)\r\n        {\r\n            for (var i=0; i<matches.length; ++i)\r\n            {\r\n                //单个汉字替换为Unicode编码格式\r\n                input = input.replace(/[^\\x00-\\xff]/, \"\\\\u\" + parseInt(matches[i].charCodeAt(0), 10).toString(16));\r\n            }\r\n        }\r\n        return input;\r\n    }\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
